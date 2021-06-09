@@ -1,0 +1,113 @@
+@charset "UTF-8";
+@media ( max-width : 576px) 
+{
+div.dataTables_wrapper div.dataTables_filter {
+    text-align: right;
+    margin-left: -186px !important;
+   
+}
+div.dataTables_wrapper div.dataTables_length label {
+    font-weight: normal;
+    text-align: left;
+    white-space: nowrap;
+    margin-right: -200px !important;
+}
+}
+@media ( max-width : 384px) 
+{
+div.dataTables_wrapper div.dataTables_length
+{
+	margin-right: 100px !important;
+	
+}
+.pull-right {
+
+    float: none !important;
+    font-size: 11px;
+}
+}
+
+@media ( max-width : 412px) 
+{
+div.dataTables_wrapper div.dataTables_length
+{
+	margin-right: 125px !important;
+	
+}
+.pull-right {
+
+    float: none !important;
+    font-size: 11px;
+}
+}
+
+@media ( max-width : 640px) 
+{
+div.dataTables_wrapper div.dataTables_length {
+    margin-right: -37px !important;
+}
+.pull-right {
+    float: none !important;
+}
+}
+
+
+@media ( max-width : 667px) 
+{
+div.dataTables_wrapper div.dataTables_length {
+    margin-right: -37px !important;
+}
+.pull-right {
+    float: none !important;
+}
+}
+
+
+@media ( max-width : 568px) 
+{
+div.dataTables_wrapper div.dataTables_length {
+    margin-right: 58px !important;
+}
+.pull-right {
+    float: none !important;
+}
+}
+
+
+@media ( max-width : 480px) 
+{
+div.dataTables_wrapper div.dataTables_length {
+    margin-right: 200px !important;
+}
+.pull-right {
+    float: none !important;
+}
+}
+
+@media (max-width: 1198px){
+
+}
+
+
+@media (max-width: 767px)
+{
+div.dataTables_wrapper div.dataTables_length label {
+    font-weight: normal;
+    text-align: left;
+    white-space: nowrap;
+    margin-right: 10px !important;
+}
+div.dataTables_wrapper div.dataTables_filter {
+    text-align: right;
+    margin-right: 15px;
+}
+}
+@media (min-width: 991px)
+
+{
+div.dataTables_wrapper div.dataTables_filter {
+    text-align: right;
+    margin-right: 15px;
+}
+
+}

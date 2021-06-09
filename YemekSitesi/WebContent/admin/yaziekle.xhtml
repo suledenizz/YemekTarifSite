@@ -1,0 +1,317 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<title>Yazı Ekle</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/x-icon"
+	href="../user/LoginRegister/resources/images/icons/favicon.ico"></link>
+<script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+<link href="resources/vendors/bootstrap/dist/css/bootstrap.min.css"
+	rel="stylesheet"></link>
+<link href="resources/vendors/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet"></link>
+<link href="resources/vendors/nprogress/nprogress.css" rel="stylesheet"></link>
+<!-- iCheck -->
+<link href="resources/vendors/iCheck/skins/flat/green.css"
+	rel="stylesheet"></link>
+<link rel="icon" type="image/icon"
+	href="../user/LoginRegister/resources/images/icons/favicon.jpg"></link>
+<link rel="stylesheet" type="text/css"
+	href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"></link>
+<link
+	href="resources/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css"
+	rel="stylesheet"></link>
+<link
+	href="resources/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css"
+	rel="stylesheet"></link>
+<link
+	href="resources/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css"
+	rel="stylesheet"></link>
+<link
+	href="resources/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css"
+	rel="stylesheet"></link>
+<link
+	href="resources/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css"
+	rel="stylesheet"></link>
+<link href="resources/build/css/custom.min.css" rel="stylesheet"></link>
+</head>
+<h:inputHidden value="#{veriBean.username}"></h:inputHidden>
+<body class="nav-md">
+	<div class="container body">
+		<div class="main_container">
+			<div class="col-md-3 left_col">
+				<div class="left_col scroll-view">
+					<div class="navbar nav_title" style="border: 0;">
+						<a href="index.html" class="site_title"><i class="fa fa-paw"></i>
+							<span>TARİF SİTESİ</span></a>
+					</div>
+					<div class="clearfix"></div>
+					<div class="profile clearfix">
+						<div class="profile_pic">
+							<img src="resources/production/images/img.png" alt="..."
+								class="img-circle profile_img"></img>
+						</div>
+						<div class="profile_info">
+							<span style="font-size: 16px;">Hoşgeldin</span>
+							<h6>#{veriBean.username}</h6>
+						</div>
+					</div>
+					<br />
+					<div id="sidebar-menu"
+						class="main_menu_side hidden-print main_menu">
+						<div class="menu_section">
+							<h3>SİTE YÖNETİM</h3>
+							<ul class="nav side-menu">
+								<li><a href="index.jsf"><i class="fa fa-home"></i>Anasayfa</a></li>
+								<li><a href="tarifler.jsf"><i class="fas fa-newspaper"
+										style="margin-right: 10px;"></i>Yemek Tarifleri</a></li>
+								<li><a href="../admin/blogyazilari.jsf"><i
+										class="fa fa-comments" aria-hidden="true"></i>Blog Yazıları</a></li>
+								<li><a href="kullanicilar.jsf"><i class="fa fa-user"
+										aria-hidden="true"></i>Kullanıcılar</a></li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="right_col" role="main">
+			<div class="">
+
+				<div class="clearfix"></div>
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="x_panel">
+							<div class="x_title">
+								<h2>
+									Yazı Ekle<small>Buradan yazı ekleyebilirsiniz.</small>
+								</h2>
+								<ul class="nav navbar-right panel_toolbox">
+									<li><a class="collapse-link"><i
+											class="fa fa-chevron-up"></i></a></li>
+									<li><a class="close-link"><i class="fa fa-close"></i></a>
+									</li>
+								</ul>
+								<div class="clearfix"></div>
+							</div>
+							<div class="x_content">
+								<br />
+								<h:form id="demo-form2" enctype="multipart/form-data"
+									prependId="false"
+									class="form-horizontal form-label-left data-parsley-validate">
+									<h:inputHidden value="#{blogYazi.yaziid}"></h:inputHidden>
+									<div class="form-group">
+										<label class="control-label col-md-3 col-sm-3 col-xs-12"
+											for="id">Yazı ID </label>
+										<div class="col-md-6 col-sm-6 col-xs-12">
+											<h:inputText type="text" id="id"
+												class="form-control col-md-7 col-xs-12" value="#{blogYazi.yaziid}"
+												disabled="true"></h:inputText>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label col-md-3 col-sm-3 col-xs-12"
+											for="first-name">Başlık</label>
+										<div class="col-md-6 col-sm-6 col-xs-12">
+											<h:inputText type="text" id="kategori"
+												class="form-control col-md-7 col-xs-12"
+												value="#{blogYazi.baslik}" required="true"
+												requiredMessage="Baslik Boş Olamaz">
+											</h:inputText>
+											<h:message for="baslik" style="color:red" />
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label col-md-3 col-sm-3 col-xs-12">Yazı
+											<span class="required">*</span>
+										</label>
+										<div class="col-md-6 col-sm-6 col-xs-12">
+											<h:inputTextarea id="yazi" class="ckeditor"
+												name="yazi" value="#{blogYazi.yazi}"
+												escape="false" required="true"
+												requiredMessage="Yazı Boş Olamaz" />
+											<h:message for="yazi" style="color:red" />
+										</div>
+									</div>
+									<script type="text/javascript">
+                 CKEDITOR.replace( 'yazi',
+
+                         {
+
+                          filebrowserBrowseUrl : 'ckfinder/ckfinder.html',
+
+                          filebrowserImageBrowseUrl : 'ckfinder/ckfinder.html?type=Images',
+
+                          filebrowserFlashBrowseUrl : 'ckfinder/ckfinder.html?type=Flash',
+
+                          filebrowserUploadUrl : 'ckfinder/core/connector/java/connector.java?command=QuickUpload&amp;type=Files',
+
+                          filebrowserImageUploadUrl : 'ckfinder/core/connector/java/connector.java?command=QuickUpload&amp;type=Images',
+
+                          filebrowserFlashUploadUrl : 'ckfinder/core/connector/java/connector.java?command=QuickUpload&amp;type=Flash',
+
+                          forcePasteAsPlainText: true
+
+                        } 
+
+                        );
+
+              </script>
+
+									<div class="form-group">
+										<label class="control-label col-md-3 col-sm-3 col-xs-12"
+											for="first-name">Yazar </label>
+										<div class="col-md-6 col-sm-6 col-xs-12">
+											<h:inputText type="text" id="yazar"
+												class="form-control col-md-7 col-xs-12"
+												value="#{blogYazi.yazar}" required="true"
+												requiredMessage="Yazar Alanı Boş Olamaz">
+
+											</h:inputText>
+											<h:message for="yazar" style="color:red" />
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+											<h:commandButton value="Kaydet" styleClass="btn btn-success"
+												action="#{veriBean.yaziEkle(blogYazi)}" />
+										</div>
+									</div>
+
+								</h:form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<footer>
+					<div class="pull-right">
+						Yemek Tarifleri Sitesi - Şeyma - Şule
+					</div>
+					<div class="clearfix"></div>
+				</footer>
+			</div>
+		</div>
+
+		<script src="resources/vendors/jquery/dist/jquery.min.js"></script>
+		<script src="resources/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="resources/vendors/fastclick/lib/fastclick.js"></script>
+		<script src="resources/vendors/nprogress/nprogress.js"></script>
+		<script src="resources/vendors/iCheck/icheck.min.js"></script>
+		<script
+			src="resources/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+		<script
+			src="resources/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+		<script
+			src="resources/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+		<script
+			src="resources/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+		<script
+			src="resources/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+		<script
+			src="resources/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+		<script
+			src="resources/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+		<script
+			src="resources/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+		<script
+			src="resources/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+		<script
+			src="resources/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+		<script
+			src="resources/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+		<script
+			src="resources/vendors/datatables.net-scroller/js/datatables.scroller.min.js"></script>
+		<script src="resources/vendors/jszip/dist/jszip.min.js"></script>
+		<script src="resources/vendors/pdfmake/build/pdfmake.min.js"></script>
+		<script src="resources/vendors/pdfmake/build/vfs_fonts.js"></script>
+		<script src="resources/build/js/custom.min.js"></script>
+		<script>
+      $(document).ready(function() {
+        var handleDataTableButtons = function() {
+          if ($("#datatable-buttons").length) {
+            $("#datatable-buttons").DataTable({
+              dom: "Bfrtip",
+              buttons: [
+                {
+                  extend: "copy",
+                  className: "btn-sm"
+                },
+                {
+                  extend: "csv",
+                  className: "btn-sm"
+                },
+                {
+                  extend: "excel",
+                  className: "btn-sm"
+                },
+                {
+                  extend: "pdfHtml5",
+                  className: "btn-sm"
+                },
+                {
+                  extend: "print",
+                  className: "btn-sm"
+                },
+              ],
+              responsive: true
+            });
+          }
+        };
+
+        TableManageButtons = function() {
+          "use strict";
+          return {
+            init: function() {
+              handleDataTableButtons();
+            }
+          };
+        }();
+
+        $('#datatable').dataTable();
+
+        $('#datatable-keytable').DataTable({
+          keys: true
+        });
+
+        $('#datatable-responsive').DataTable();
+
+        $('#datatable-scroller').DataTable({
+          ajax: "js/datatables/json/scroller-demo.json",
+          deferRender: true,
+          scrollY: 380,
+          scrollCollapse: true,
+          scroller: true
+        });
+
+        $('#datatable-fixed-header').DataTable({
+          fixedHeader: true
+        });
+
+        var $datatable = $('#datatable-checkbox');
+
+        $datatable.dataTable({
+          'order': [[ 1, 'asc' ]],
+          'columnDefs': [
+            { orderable: false, targets: [0] }
+          ]
+        });
+        $datatable.on('draw.dt', function() {
+          $('input').iCheck({
+            checkboxClass: 'icheckbox_flat-green'
+          });
+        });
+
+        TableManageButtons.init();
+      });
+    </script>
+		<script>  
+var editor = CKEDITOR.replace( 'editor1' );
+CKFinder.setupCKEditor( editor );
+    </script>
+	</div>
+</body>
+</html>

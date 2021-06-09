@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+<head>
+<title>Üye Girişi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link rel="icon" type="image/x-icon"
+	href="user/LoginRegister/resources/images/icons/favicon.jpg"></link>
+</head>
+
+<link rel="stylesheet" type="text/css"
+	href="user/LoginRegister/resources/vendor/bootstrap/css/bootstrap.min.css"></link>
+<link rel="stylesheet" type="text/css"
+	href="user/LoginRegister/resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css"></link>
+<link rel="stylesheet" type="text/css"
+	href="user/LoginRegister/resources/fonts/iconic/css/material-design-iconic-font.min.css"></link>
+<link rel="stylesheet" type="text/css"
+	href="user/LoginRegister/resources/vendor/animate/animate.css"></link>
+<link rel="stylesheet" type="text/css"
+	href="user/LoginRegister/resources/vendor/css-hamburgers/hamburgers.min.css"></link>
+<link rel="stylesheet" type="text/css"
+	href="user/LoginRegister/resources/vendor/animsition/css/animsition.min.css"></link>
+<link rel="stylesheet" type="text/css"
+	href="user/LoginRegister/resources/vendor/select2/select2.min.css"></link>
+<link rel="stylesheet" type="text/css"
+	href="user/LoginRegister/resources/vendor/daterangepicker/daterangepicker.css"></link>
+<link rel="stylesheet" type="text/css"
+	href="user/LoginRegister/resources/css/util.css"></link>
+<link rel="stylesheet" type="text/css"
+	href="user/LoginRegister/resources/css/main.css"></link>
+<body>
+	<div class="limiter">
+		<div class="container-login100"
+			style="background-image: url('user/LoginRegister/resources/images/arkaplan.png');">
+			<div class="wrap-login100">
+				<h:form class="login100-form validate-form" name="girisformu"
+					id="girisformu" action="" prependId="false">
+					<span class="login100-form-logo"> <i><img
+							src="user/resources/images/user1.png" alt="..."
+							class="img-circle profile_img" style="width: 110px;"></img></i>
+					</span>
+
+					<span class="login100-form-title p-b-34 p-t-27"> ÜYE GİRİŞİ </span>
+
+					<div class="wrap-input100 validate-input"
+						data-validate="Enter email">
+						<h:inputText class="input100" styleClass="form-control"
+							type="kullaniciadi" name="kullaniciadi" id="kullaniciadi" p:placeholder="Kullaniciadi"
+							value="#{veriBean.username}" required="true"
+							requiredMessage="Kullanıcı Adı Alanı Boş Olamaz"
+							style="margin-top: 8px;"></h:inputText>
+							<p><h:message for="kullaniciadi" style="color:white;"></h:message></p>
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input"
+						data-validate="Enter password">
+						<h:inputSecret class="input100" type="password" name="password"
+							id="password" p:placeholder="Şifre"
+							value="#{veriBean.password}" required="true"
+							styleClass="form-control"
+							requiredMessage="Şifre Alanı Boş Olamaz"></h:inputSecret>
+							<p><h:message for="password" style="color:white;"></h:message></p>
+						<span class="focus-input100"></span>
+					</div>
+
+					<h:commandButton value="Giriş Yap" class=" btn btn-info"
+						style="margin-top: 10px;" 
+						action = "#{veriBean.kullaniciGirisi()}"
+						/>
+					<h:link value="KAYIT OL" role="button" outcome="uyekayit.jsf"
+						class="btn btn-warning" style="margin-top: 10px; float: right;"></h:link>
+				</h:form>
+
+			</div>
+
+		</div>
+	</div>
+	<div id="dropDownSelect1"></div>
+	<script
+		src="user/LoginRegister/resources/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script
+		src="user/LoginRegister/resources/vendor/animsition/js/animsition.min.js"></script>
+	<script
+		src="user/LoginRegister/resources/vendor/bootstrap/js/popper.js"></script>
+	<script
+		src="user/LoginRegister/resources/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script
+		src="user/LoginRegister/resources/vendor/select2/select2.min.js"></script>
+	<script
+		src="user/LoginRegister/resources/vendor/daterangepicker/moment.min.js"></script>
+	<script
+		src="user/LoginRegister/resources/vendor/daterangepicker/daterangepicker.js"></script>
+	<script
+		src="user/LoginRegister/resources/vendor/countdowntime/countdowntime.js"></script>
+	<script src="user/LoginRegister/resources/js/main.js"></script>
+</body>
+</html>

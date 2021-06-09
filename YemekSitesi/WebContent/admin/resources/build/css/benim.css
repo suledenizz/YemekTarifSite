@@ -1,0 +1,45 @@
+@charset "UTF-8";
+@media ( max-width : 576px) 
+{
+div.dataTables_wrapper div.dataTables_filter {
+    text-align: right;
+    margin-left: -186px !important;
+}
+div.dataTables_wrapper div.dataTables_length label {
+    font-weight: normal;
+    text-align: left;
+    white-space: nowrap;
+    margin-right: -50px !important;
+}
+
+}
+
+
+
+@media (max-width: 1198px){
+
+}
+
+
+@media (max-width: 767px)
+{
+div.dataTables_wrapper div.dataTables_length label {
+    font-weight: normal;
+    text-align: left;
+    white-space: nowrap;
+    margin-right: 10px !important;
+}
+div.dataTables_wrapper div.dataTables_filter {
+    text-align: right;
+    margin-right: 15px;
+}
+}
+@media (min-width: 991px)
+
+{
+div.dataTables_wrapper div.dataTables_filter {
+    text-align: right;
+    margin-right: 15px;
+}
+
+}
